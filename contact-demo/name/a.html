@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>window-name</title>
+</head>
+<body>
+  <h1>window-name a.html</h1>
+  <iframe
+    src="http://localhost:4000/c.html"
+    id="frame"
+    frameborder="10"
+    onload="load()"
+  ></iframe>
+  <script>
+    let first = true;
+
+    function load() {
+      let frame = document.getElementById("frame");
+      let iwindow = frame.contentWindow;
+
+      if (first) {
+        
+        frame.src = 'http://localhost:3000/b.html';
+        first = false;
+      } else {
+        console.log(iwindow.name);
+      }
+    }
+  </script>
+</body>
+</html>

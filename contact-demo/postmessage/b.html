@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>postmessage</title>
+</head>
+<body>
+  <h1>postmessage B 页面</h1>
+  <script>
+    window.addEventListener('message', function(event){
+      console.log(event.data.data);
+
+      event.source.postMessage({
+        type: 'b',
+        data: "我是 b 发的消息",
+      }, event.origin);
+    })
+  </script>
+</body>
+</html>

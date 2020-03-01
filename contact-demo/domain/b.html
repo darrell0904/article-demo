@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>document-domain</title>
+</head>
+<body>
+  <h1>document-domain b.html</h1>
+  <script>
+    document.domain = "example.cn";
+    var name = 'b 定义的 name';
+  </script>
+</body>
+</html>

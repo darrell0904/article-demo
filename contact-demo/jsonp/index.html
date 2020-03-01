@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jsonp demo</title>
+</head>
+<body>
+  <h1>Jsonp 的 demo</h1>
+  <script src="./jsonp.js"></script>
+  <script>
+    jsonp({
+      url: 'http://localhost:3000/jsonp', 
+      params: {
+        key: '1',
+      },
+      cb: 'showData',
+    }).then((data) => {
+      console.log('data', data);
+    })
+  </script>
+</body>
+</html>

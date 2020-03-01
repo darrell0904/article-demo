@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>csrf - demo</title>
+</head>
+<body>
+  <h1>csrf - a.html</h1>
+  <script src="./ajax.js"></script>
+  <script>
+    document.cookie="username=John Smith; expires=Thu, 18 Dec 2043 12:00:00 GMT;path=/";
+    ajax('GET', 'http://localhost:3000/getMoney?name=darrell');
+  </script>
+</body>
+</html>

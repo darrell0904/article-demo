@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>document-domain</title>
+</head>
+<body>
+  <!-- 配置 host -->
+  <!-- http://a.example.cn:3000/a.html -->
+  <h1>document-domain a.html</h1>
+  <iframe
+    src="http://b.example.cn:3000/b.html"
+    id="frame"
+    frameborder="10"
+    onload="load()"
+  ></iframe>
+  <script>
+    document.domain = "example.cn";
+    function load() {
+      let frame = document.getElementById("frame");
+      let iwindow = frame.contentWindow;
+      console.log(iwindow.name);
+    }
+  </script>
+</body>
+</html>

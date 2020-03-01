@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>window-hash</title>
+</head>
+<body>
+  <!-- 路径后的 hash 可以用来通信 -->
+  <!-- a 访问 c -->
+  <h1>window-hash a.html</h1>
+  <iframe
+    src="http://localhost:4000/c.html#hashname=darrell"
+    id="frame"
+    frameborder="10"
+  ></iframe>
+  <script>
+    window.onhashchange = function() {
+      console.log('a 收到', location.hash);
+    }
+  </script>
+</body>
+</html>
