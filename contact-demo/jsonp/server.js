@@ -17,7 +17,7 @@ app.get('/jsonp', function(req, res) {
   if (cb) {
     res.end(`${cb}(${JSON.stringify(data)})`);
   } else {
-    res.end('未传参数111');
+    res.end('未传参数');
   }
   
 })

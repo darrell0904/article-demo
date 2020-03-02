@@ -31,10 +31,10 @@ app.all('*', function (req, res, next) {
 });
 
 app.get('/getData', function(req, res) {
-  console.log(req.cookies);
+  // console.log(req.cookies);
 
-  res.cookie('user', 'maolei');
-  res.setHeader('name', 'fujiawei');
+  // res.cookie('user', 'maolei');
+  res.setHeader('name', 'maolei');
 
   const data = {
     data: '我是 cors 的 data',
