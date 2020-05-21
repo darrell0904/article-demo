@@ -1,0 +1,29 @@
+body {
+  overflow-x: hidden;
+}
+
+.wrapper {
+  height: 2000px;
+  /* overflow: hidden; */
+}
+
+.flowBox {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #d30000;
+  opacity: .7;
+  mix-blend-mode: multiply;
+}
+div.nav {
+  height: 100px;
+  border: solid deepskyblue;
+  margin-top: 50px;
+}
+nav {
+  position: sticky;
+  top: 20px;
+  background: lightskyblue;
+}

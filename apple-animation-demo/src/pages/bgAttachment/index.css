@@ -1,0 +1,89 @@
+html {
+  position: relative;
+}
+
+body {
+  margin: 0px;
+  /*padding: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;*/
+}
+.box {
+  width: 100px;
+  height: 100px;
+  background: #00C487;
+  /*transform: translate(10px, 20px) rotate(30deg) scale(1.5, 2);*/
+  /*transform: matrix(0.75, 0.8, -0.8, 1.2, 10, 20);*/
+  /*transform: matrix(1, 0, 0, 1, 0, 136);*/
+}
+
+img {
+  /*opacity: 0;*/
+}
+
+.stickyContainer {
+  height: 150vh;
+  position: relative;
+  /*margin-top: 100px;*/
+}
+
+.componentContainer {
+  overflow: hidden;
+  position: sticky;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  will-change: transform;
+}
+
+.imgWrapper {
+  /*margin-top: 100px;*/
+
+  width: 694px;
+  height: 408px;
+  /*background-size: 694px 408px;*/
+  background-image: url(@/assets/mac3.jpg);
+  background-position: center center;
+  transform-origin: top;
+  text-align: center;
+  position: relative;
+  background-repeat: no-repeat;
+  /*transform: matrix(1, 0, 0, 1, 0, 136);*/
+}
+
+.content p {
+  line-height: 24px
+}
+
+section {
+  height: 100vh;
+}
+
+.gImg {
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+}
+
+.fixed {
+  background-attachment: fixed;
+}
+
+.gImg1 {
+  background-image: url(@/assets/mac1.jpg);
+}
+
+.gImg2 {
+  background-image: url(@/assets/mac2.jpg);
+  /*background-size: 544px 341px;*/
+  background-repeat: no-repeat;
+  width: 544px;
+  height: 341px;
+  /*position: absolute;*/
+  /*top: 18px;*/
+  margin: 0 auto;
+}

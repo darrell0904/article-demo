@@ -1,0 +1,26 @@
+body {
+  margin: 0px;
+}
+
+section {
+  height: 100vh;
+}
+
+.gImg {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+}
+
+.gImg1 {
+  background-image: url(@/assets/mac1.jpg);
+}
+
+.gImg2 {
+  background-image: url(@/assets/mac2.jpg);
+}
+
+.gImg3 {
+  background-image: url(@/assets/mac4.jpg);
+}

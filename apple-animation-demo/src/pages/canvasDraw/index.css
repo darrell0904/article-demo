@@ -1,0 +1,56 @@
+html {
+  position: relative;
+}
+
+body {
+  margin: 0px;
+}
+.box {
+  width: 100px;
+  height: 100px;
+  background: #00C487;
+}
+
+.stickyContainer {
+  height: 250vh;
+  position: relative;
+}
+
+.componentContainer {
+  overflow: hidden;
+  position: sticky;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  will-change: transform;
+}
+
+.imgWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 694px;
+  height: 408px;
+  background-size: 694px 408px;
+  background-image: url(@/assets/mac3.jpg);
+
+  transform-origin: top;
+
+  text-align: center;
+  position: relative;
+
+}
+
+.canvas {
+  position: absolute;
+  top: 18px;
+  width: 544px;
+  height: 341px;
+}
+
+.content p {
+  line-height: 24px
+}

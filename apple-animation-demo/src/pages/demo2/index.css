@@ -1,0 +1,26 @@
+body {
+  padding: 0px 100px;
+  margin: 0;
+}
+
+nav {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  position: sticky;
+  top: 0;
+}
+
+nav h3 {
+  display: table-cell;
+  outline: 1px solid #fff;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
+
+p {
+  font-size: 16px;
+}
+
