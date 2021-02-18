@@ -10,6 +10,13 @@ body {
   justify-content: center;
   align-items: center;*/
 }
+
+.normal {
+  font-family: Georgia, sans-serif;
+  margin-top: 2em;
+  text-align: center;
+}
+
 .box {
   width: 100px;
   height: 100px;

@@ -1,9 +1,10 @@
 body {
-  overflow-x: hidden;
+  overflow: visible;
+  height: 2000px;
 }
 
 .wrapper {
-  height: 2000px;
+  
   /* overflow: hidden; */
 }
 

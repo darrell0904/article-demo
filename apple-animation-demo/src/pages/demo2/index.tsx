@@ -4,7 +4,7 @@ import styles from './index.css';
 const Demo2 = (): JSX.Element => {
   return (
     <div className={styles.normal}>
-      <h1>我是标题，题题，题，……</h1>
+      <h1>我是 sticky 的第一个 demo</h1>
       <nav>
         <h3>导航A</h3>
         <h3>导航B</h3>

@@ -6,6 +6,12 @@ section {
   height: 100vh;
 }
 
+.normal {
+  font-family: Georgia, sans-serif;
+  margin-top: 2em;
+  text-align: center;
+}
+
 .gImg {
   background-attachment: fixed;
   background-size: cover;

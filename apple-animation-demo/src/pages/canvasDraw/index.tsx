@@ -44,6 +44,10 @@ const CanvasDraw = (): JSX.Element => {
     let curScale = scaleRadio;
     let translate = -scaleRadio * 18;
 
+    console.log('---NewStartScale---', NewStartScale);
+    console.log('---scrollTop---', scrollTop);
+
+
     if (!NewStartScale || !StartScale)  return;
 
 
@@ -156,7 +160,7 @@ const CanvasDraw = (): JSX.Element => {
   }, [canvasRef, NewStartScale, StartScale, loadAllImg]);
 
   return (
-    <div className={styles.root}>
+    <>
       <div className={styles.content}>
         <p>1</p>
         <p>1</p>
@@ -231,12 +235,10 @@ const CanvasDraw = (): JSX.Element => {
         <p>1</p>
       </div>
 
-      <div id="section-sticky-hero" className={styles.sectionStickyHero}>
-        <div className={styles.stickyContainer}>
-          <div className={styles.componentContainer}>
-            <div className={styles.imgWrapper} id="img-wrapper">
-              <canvas ref={canvasRef} id="canvas" className={styles.canvas}></canvas>
-            </div>
+      <div id="section-sticky-hero" className={styles.stickyContainer}>
+        <div className={styles.componentContainer}>
+          <div className={styles.imgWrapper} id="img-wrapper">
+            <canvas ref={canvasRef} id="canvas" className={styles.canvas}></canvas>
           </div>
         </div>
       </div>
@@ -308,7 +310,7 @@ const CanvasDraw = (): JSX.Element => {
         <p>1</p>
         <p>1</p>
       </div>
-    </div>
+    </>
   );
 }
 

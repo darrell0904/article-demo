@@ -5,6 +5,26 @@
   text-align: center;
 }
 
+.stickyContainer {
+  height: 150vh;
+}
+
+.stickyWrapper {
+  height: 100vh;
+  position: sticky;
+  top: 100px;
+}
+
+.imgWrapper {
+  width: 100vh;
+  height: 521px;
+  margin: 0 auto;
+}
+
+.imgWrapper img {
+  width: 100%;
+}
+
 .list {
   font-size: 1.2em;
   margin: 1.8em 0 0;
@@ -14,4 +34,8 @@
 
 .list code {
   background: #f7f7f7;
+}
+
+.content p {
+  line-height: 24px
 }

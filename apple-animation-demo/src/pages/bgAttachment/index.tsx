@@ -39,19 +39,9 @@ const BgAttachment = (): JSX.Element => {
 
     if (scrollTop > imgFixFixed - 10 && scrollTop < imgFixFixed + window.innerHeight) {
       setFixImg(true);
-      $('#g-img2').css({
-        width: scaleRadio * CANVAS_WIDTH,
-        height: scaleRadio * CANVAS_HEIGHT,
-      });
-
-      $('#img-wrapper').css({
-        "width": scaleRadio * WRAPPER_WIDTH,
-        "height": scaleRadio * WRAPPER_HEIGHT,
-      });
     } else {
       setFixImg(false);
     }
-
 
     curScale = scaleRadio - ((scaleRadio - 1) / ZOOM_SCROLL_RANGE) * (scrollTop - imgFixFixed - window.innerHeight);
 
@@ -72,8 +62,8 @@ const BgAttachment = (): JSX.Element => {
     translate = -scaleRadio * 18 + ((scrollTop - imgFixFixed - window.innerHeight) / ZOOM_SCROLL_RANGE * (scaleRadio * 18 + StartScale));
 
 
-    if (translate > 190.5) {
-      translate = 190.5;
+    if (translate > StartScale) {
+      translate = StartScale;
     } else if (translate < -scaleRadio * 18) {
       translate = - scaleRadio * 18;
     }
@@ -100,6 +90,8 @@ const BgAttachment = (): JSX.Element => {
     imgFixFixed = $('#g-img').offset().top;
     StartScale = window.innerHeight / 2 - $('#img-wrapper').height() / 2;
 
+    console.log('---StartScale---', StartScale);
+
     scrollEvent();
 
     return ()=>{
@@ -109,7 +101,7 @@ const BgAttachment = (): JSX.Element => {
 
 
   return (
-    <div className={styles.root}>
+    <>
       <div className={styles.content}>
         <p>1</p>
         <p>1</p>
@@ -261,7 +253,7 @@ const BgAttachment = (): JSX.Element => {
         <p>1</p>
         <p>1</p>
       </div>
-    </div>
+    </>
   );
 }
 

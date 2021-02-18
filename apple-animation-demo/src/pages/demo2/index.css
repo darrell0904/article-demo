@@ -6,7 +6,6 @@ body {
 nav {
   display: table;
   width: 100%;
-  table-layout: fixed;
   position: sticky;
   top: 0;
 }
@@ -14,7 +13,7 @@ nav {
 nav h3 {
   display: table-cell;
   outline: 1px solid #fff;
-  background-color: #333;
+  background-color: #4caf50;
   color: #fff;
   text-align: center;
   padding: 10px;

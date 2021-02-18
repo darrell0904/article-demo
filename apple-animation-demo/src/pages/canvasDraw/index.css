@@ -5,11 +5,6 @@ html {
 body {
   margin: 0px;
 }
-.box {
-  width: 100px;
-  height: 100px;
-  background: #00C487;
-}
 
 .stickyContainer {
   height: 250vh;
