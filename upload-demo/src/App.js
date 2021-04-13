@@ -4,6 +4,9 @@ import './App.css';
 const CHUNK_SIZE = 2 * 1024 * 1024; //2m
 const THREADS = 3; //最大并发数
 
+
+const SAVE_CHUNK_KEY = "chunkuploadedObj";
+
 // 创建文件切片
 const createFileChunk = (file, size = CHUNK_SIZE) => {
   const fileChunkList = [];
@@ -15,6 +18,22 @@ const createFileChunk = (file, size = CHUNK_SIZE) => {
     count += size;
   }
   return fileChunkList;
+};
+
+//获得本地缓存的数据
+const getUploadedFromStorage = () => {
+  return JSON.parse( localStorage.getItem(SAVE_CHUNK_KEY) || "{}");
+};
+
+// 写入缓存
+const setUploadedToStorage = (index) => {
+  var obj = getUploadedFromStorage();
+  obj[index]=true;      
+  localStorage.setItem(SAVE_CHUNK_KEY, JSON.stringify(obj) );
+}
+
+const clearLocalStorage = () => {
+  localStorage.removeItem(SAVE_CHUNK_KEY);
 };
 
 function App() {
@@ -51,7 +70,8 @@ function App() {
     xhr.upload.addEventListener('progress', (event) => {
       if (event.lengthComputable) {
         var completedPercent = (event.loaded / event.total * 100).toFixed(2);
-        setUploadPersent(completedPercent);
+
+        // setUploadPersent(completedPercent);
       }
     });
   
@@ -63,11 +83,19 @@ function App() {
     let finished = 0;
     const total = chunks.length;
 
+    const uploadedInfo = getUploadedFromStorage();
+
     return new Promise((resolve, reject) => {
       const handler = () => {
         if (chunks.length > 0) {
           // 出栈
           const formInfo = chunks.shift();
+
+          if (uploadedInfo[formInfo.index]) {
+            finished++;
+            handler();
+            return;
+          }
 
           console.log('---formInfo---', formInfo);
 
@@ -78,6 +106,8 @@ function App() {
 
           xhrSend('http://localhost:3000/fileChunk', formData, () => {
             finished++;
+            setUploadPersent(finished / total * 100);
+            setUploadedToStorage(formInfo.index);
             handler();
           });
         }
@@ -104,13 +134,13 @@ function App() {
     formD.append('chunkCount', chunkLength);
     formD.append('filename', uploadFile.name);
 
+    clearLocalStorage();
+
     xhrSend('http://localhost:3000/fileChunk/merge', formD);
   };
 
   // 点击上传
   const upload = async () => {
-    console.log('---e----', uploadFile);
-
     let chunks = createFileChunk(uploadFile);
 
     chunks = chunks.map((item, index) => {
@@ -140,6 +170,9 @@ function App() {
 
         <div id="totalBar" className="totalBar">
             <div id="totalBarColor" className="totalBarColor" style={{ width: `${uploadPersent}%` }}></div>
+            <div className="progressText">
+              上传中：{uploadPersent}%
+            </div>
          </div>
 
       </div>

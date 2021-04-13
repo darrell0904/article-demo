@@ -29,12 +29,17 @@
   color: #61dafb;
 }
 
+.progressText {
+  margin-top: 4px;
+  width: 1000px;
+}
+
 .totalBar {
   height: 30px;
   border: 1px solid;
   border-radius: 3px;
   width: 50%;
-  margin: 10px 0;
+  margin: 10px 0 60px;
 }
 
 .totalBarColor {
